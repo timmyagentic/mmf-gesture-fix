@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.1 — 2026-10-11
+
+- English is the default application language, independent of the system language.
+- Select English or 简体中文 in the control window; menus and controls update immediately and the choice persists.
+- GitHub opens the English README, with a link to the full Chinese translation.
+- Gesture policy and supported Helper / OS scope are unchanged.
+
 ## 0.1.0 — 2026-10-11
 
 First public release of the independent MMF Gesture Fix companion.

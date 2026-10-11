@@ -8,7 +8,13 @@ Download the ZIP, extract it, move the app to `/Applications`, and open it along
 
 首次运行需要在系统设置的“隐私与安全性 → 辅助功能”中允许本应用。点击“重新检查权限”后确认 `active`、正确 Helper build 和修复开启。仅给官方 Mac Mouse Fix 授权不能替代给此独立应用授权。
 
-Grant this companion Accessibility permission, then click **重新检查权限**. The official app's permission does not grant access to this separately identified companion.
+Grant this companion Accessibility permission, then click **Recheck Permission**. The official app's permission does not grant access to this separately identified companion.
+
+## 语言 / Language
+
+应用默认英语，在控制窗口下拉菜单中选择 **简体中文** 即时切换并保存；选择 **English** 切回英语。语言切换不改变修复开关。
+
+The interface defaults to English, regardless of system language. Choose **简体中文** or **English** in the control window. Controls and menu items update immediately; the choice persists across launches without changing repair mode.
 
 ## 更新 / Update
 
@@ -38,7 +44,7 @@ Unknown Helper builds pass through. Do not remove signature / version checks to 
 The public package is signed, notarized and stapled. If macOS rejects it, redownload, check the checksum and report the exact error rather than disabling Gatekeeper.
 
 ```sh
-shasum -a 256 -c MMF-Gesture-Fix-0.1.0.app.zip.sha256
+shasum -a 256 -c MMF-Gesture-Fix-0.1.1.app.zip.sha256
 codesign --verify --deep --strict "/Applications/MMF Gesture Fix.app"
 spctl --assess --type execute --verbose=2 "/Applications/MMF Gesture Fix.app"
 ```
@@ -55,6 +61,7 @@ Compare both modes under the same conditions. Ordinary scrolling and other gestu
 2. 将 `/Applications/MMF Gesture Fix.app` 移入废纸篓。
 3. 可在辅助功能设置移除此应用的授权。
 4. 如需清除诊断记录，将 `~/Library/Application Support/MMF Gesture Fix/` 移入废纸篓；这不涉及官方 Mac Mouse Fix 的配置。
-5. 可选清除修复开关：`defaults delete local.timmy.mmf-gesture-fix RepairEnabled`。
+5. 可选清除语言选择：`defaults delete local.timmy.mmf-gesture-fix InterfaceLanguage`。下次启动恢复英语。
+6. 可选清除修复开关：`defaults delete local.timmy.mmf-gesture-fix RepairEnabled`。
 
 Quit from the companion's menu bar menu, then move the app to Trash. Optionally remove its Accessibility entry, local support folder and its own repair preference. Official Mac Mouse Fix stays installed and unchanged. No login item or background service needs removal.

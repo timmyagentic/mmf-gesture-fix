@@ -1,2 +1,3 @@
 import Foundation
-exit(runPolicyTests() ? 0 : 1)
+let policyOK = runPolicyTests(), languageOK = runLanguageTests()
+exit(policyOK && languageOK ? 0 : 1)

@@ -40,7 +40,7 @@ final class RepairEngine {
         lock.lock(); defer { lock.unlock() }
         return eligibility.verifiedPID > 0
             ? "PID \(eligibility.verifiedPID) · build \(eligibility.helperBuild)"
-            : "未识别官方 Helper"
+            : "Official Helper not detected"
     }
     func refreshHelper(publishStatus: Bool = true) {
         var pid: Int32 = 0, build: Int32 = 0
@@ -65,7 +65,7 @@ final class RepairEngine {
     }
     func publish() {
         lock.lock()
-        let data: [String: Any] = ["version": "0.1.0", "pid": ProcessInfo.processInfo.processIdentifier,
+        let data: [String: Any] = ["version": AppVersion.current, "pid": ProcessInfo.processInfo.processIdentifier,
             "executable": Bundle.main.executablePath ?? "", "state": state, "enabled": enabled,
             "helper_pid": eligibility.verifiedPID, "helper_build": eligibility.helperBuild,
             "source_supported": eligibility.helperBuild == 24898 && eligibility.macOSMajor == 27,
@@ -78,7 +78,7 @@ final class RepairEngine {
         lock.lock()
         let ordered = records.count < 256 ? records
             : Array(records[nextRecord...] + records[..<nextRecord])
-        let data: [String: Any] = ["schema": 1, "version": "0.1.0",
+        let data: [String: Any] = ["schema": 1, "version": AppVersion.current,
             "generated_at": ISO8601DateFormatter().string(from: Date()), "capacity": 256,
             "enabled": enabled, "helper_pid": eligibility.verifiedPID,
             "helper_build": eligibility.helperBuild, "observed": observed, "corrected": corrected,
