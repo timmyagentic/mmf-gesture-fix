@@ -10,6 +10,10 @@ A standalone menu bar companion for **macOS 27** and the officially signed **Mac
 
 The interface defaults to English. Select **简体中文** in the control window to switch immediately; your choice is remembered across launches. The Helper PID changes between sessions.
 
+## Install with an AI agent
+
+> Install the latest official MMF Gesture Fix using https://raw.githubusercontent.com/timmyagentic/mmf-gesture-fix/main/docs/INSTALLATION.md. Check macOS and the official Helper version, verify the release, guide me through Accessibility permission, and report runtime status and a real paused/enabled gesture comparison. Preserve Mac Mouse Fix settings and clearly report any unverified step.
+
 ## Compatibility
 
 | Requirement | Supported scope |

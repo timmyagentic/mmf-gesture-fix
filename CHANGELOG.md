@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Add English/Chinese Agent-install prompts and a workflow covering compatibility, signed downloads, Accessibility and honest gesture acceptance.
+
 ## 0.1.1 — 2026-10-11
 
 - English is the default application language, independent of the system language.
