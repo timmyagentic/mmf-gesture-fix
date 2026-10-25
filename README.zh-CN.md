@@ -10,6 +10,10 @@
 
 截图为 0.1.1 选择简体中文后的实际界面；默认语言为英语，Helper PID 随运行变化。
 
+## 交给 Agent 安装
+
+> 请按 https://raw.githubusercontent.com/timmyagentic/mmf-gesture-fix/main/docs/INSTALLATION.md 安装最新正式版 MMF Gesture Fix，先核对系统和官方 Helper 版本、校验发行包，再引导我完成辅助功能授权和暂停/启用的真实手势对照；保留 Mac Mouse Fix 配置，明确报告运行状态与未验证步骤。
+
 ## 先确认是否适合你
 
 | 条件 | 当前支持 |

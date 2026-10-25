@@ -1,5 +1,21 @@
 # 安装与排查 / Installation and troubleshooting
 
+## Agent 执行流程 / Agent workflow
+
+1. 在本机执行安装步骤，先核对 macOS 27、CPU 架构及官方 Mac Mouse Fix Helper build 24898 和签名。系统或 Helper 不匹配时停止，不放宽版本检查，不修改官方 App 或映射。
+2. 从本仓库最新正式 Release 一次确定 tag，再下载同版 ZIP、SHA-256 sidecar 和 release manifest；验证校验和及下文的签名/Gatekeeper 检查。不要混用不同版本或绕过 quarantine。
+3. 检查已有安装的实际路径、版本与运行 PID。保留官方配置及本应用偏好；只有已授权升级时才退出和替换旧副本。按下方手动流程安装，不添加登录自启。
+4. 引导用户在系统设置完成本应用的辅助功能授权。重新检查后核对 `--status` 的来源/Helper 版本、修复开关和运行路径；新副本唤起旧实例不能算安装成功。
+5. 执行不投递输入的 `--self-test`，再由用户按下方“对照体验”完成真实鼠标手势比较。自动测试、`active` 和真实改善分别报告；未做物理对照时标为 UNVERIFIED。
+6. 报告发行版本、安装路径、签名、权限状态、Helper 兼容性和对照结果。失败时说明具体未完成步骤；不要卸载官方 Mac Mouse Fix 或清空其配置。
+
+Execute the applicable local steps, rather than only returning commands. Resolve
+one official stable release, verify its checksum, signature and compatibility,
+and preserve both applications' existing settings. Accessibility permission is a
+user step. Verify the actual running executable and eligible Helper; then keep
+non-posting self-tests distinct from the user's real paused/enabled comparison.
+Report incomplete authorization or physical verification as UNVERIFIED.
+
 ## 安装 / Install
 
 从本项目 [GitHub Releases](https://github.com/timmyagentic/mmf-gesture-fix/releases/latest) 下载 ZIP，解压后拖到 `/Applications`。运行官方 Mac Mouse Fix，再打开修复器。发布包为 Universal，支持 Apple silicon 与 Intel；实际修复仍限 macOS 27 + 官方 Helper build 24898。
