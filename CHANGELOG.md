@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+
+- Document the protected squash PR workflow, automatic remote task-branch deletion and existing local branch/worktree archive boundaries.
 - Add English/Chinese Agent-install prompts and a workflow covering compatibility, signed downloads, Accessibility and honest gesture acceptance.
 
 ## 0.1.1 — 2026-10-11

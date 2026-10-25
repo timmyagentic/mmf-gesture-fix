@@ -21,3 +21,7 @@ scripts/verify.sh
 Record your OS and any skipped HID runtime check. New Helper / OS support needs real event and physical gesture evidence, not just a relaxed version check. Document changes in [CHANGELOG.md](CHANGELOG.md). Do not add background polling, telemetry, login startup or an updater without a separate product decision.
 
 Pull requests should state the concrete trigger, resulting behavior and validation. Development signing is ad-hoc; do not submit signing identities, Keychain profiles or private keys. See [releasing](docs/RELEASING.md) for maintainers' package validation.
+
+## Merge and branch cleanup
+
+Follow [the repository workflow](AGENTS.md#repository-workflow-and-branch-protection): default-branch changes require a PR and squash merging, with resolved review conversations and no administrator bypass. Keep automatic remote-branch deletion enabled. Local branches and worktrees remain for the existing Tingjun Workspace archive workflow; do not use `--delete-branch` during merge. Existing CI requirements remain unchanged.
