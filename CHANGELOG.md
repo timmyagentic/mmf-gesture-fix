@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Bind the existing single macOS verification job as a required merge check and cancel stale CI runs.
+
 
 - Document the protected squash PR workflow, automatic remote task-branch deletion and existing local branch/worktree archive boundaries.
 - Add English/Chinese Agent-install prompts and a workflow covering compatibility, signed downloads, Accessibility and honest gesture acceptance.
