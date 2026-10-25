@@ -1,10 +1,12 @@
 name: Verify
-on:
+'on':
   push:
-    branches: [main]
-    tags: ['v*']
-  pull_request:
-  workflow_dispatch:
+    branches:
+    - main
+    tags:
+    - v*
+  pull_request: null
+  workflow_dispatch: null
 permissions:
   contents: read
 jobs:
@@ -12,12 +14,15 @@ jobs:
     runs-on: macos-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
-      - name: Shell syntax
-        run: bash -n scripts/*.sh
-      - name: Policy tests
-        run: scripts/test.sh
-      - name: Universal development build
-        run: scripts/build.sh
-      - name: Bundle and static verification
-        run: scripts/verify.sh
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+    - name: Shell syntax
+      run: bash -n scripts/*.sh
+    - name: Policy tests
+      run: scripts/test.sh
+    - name: Universal development build
+      run: scripts/build.sh
+    - name: Bundle and static verification
+      run: scripts/verify.sh
+concurrency:
+  group: verify-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
